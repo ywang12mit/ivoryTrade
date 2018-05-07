@@ -37,7 +37,7 @@ var svg = d3.select("#chart").append("svg")
 ;
 
 // Get the data
-d3.csv("data-3.csv", function(error, data) {
+d3.csv("chart1/data-3.csv", function(error, data) {
   if (error) throw error;
 
   // format the data

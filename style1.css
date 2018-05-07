@@ -1,6 +1,3 @@
-body {
-    background-color: #121720;
-}
 
 .line {
   fill: none;
@@ -8,15 +5,7 @@ body {
   stroke-width: 2px;
 }
 
-.axis line{
-  stroke: #7d96a0 !important;
-}
-
-.axis path{
-  stroke: #7d96a0 !important;
-}
-
-.axis text{
+.axis line,.axis path,.axis text{
   stroke: #7d96a0 !important;
 }
 
@@ -26,9 +15,7 @@ body {
     stroke:#ce974b;
 }
 
-#yr {
-    color: #b57f51 !important;
-}
+
 
 .mouseText{
     fill: #a54d5b !important;
@@ -39,8 +26,6 @@ body {
     stroke:#a54d5b;
 }
 
-
-body { font:16px Montserrat;}
 
 .graphInfo{
    width: 100%;
@@ -53,7 +38,15 @@ body { font:16px Montserrat;}
     max-width: 100%;       
 }
 
+#yr {
+    margin-top: 10px;
+    color: #b57f51 !important;
+}
+
 #des {
+    margin:0px;
+    margin-top:30px;
+     margin-bottom:10px;
     color: #71353e !important;
     max-height: 100%;
     max-width: 100%;  
