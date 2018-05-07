@@ -1,0 +1,68 @@
+body {
+    background-color: #121720;
+}
+
+.line {
+  fill: none;
+  stroke: #7d96a0 !important;
+  stroke-width: 2px;
+}
+
+.axis line{
+  stroke: #7d96a0 !important;
+}
+
+.axis path{
+  stroke: #7d96a0 !important;
+}
+
+.axis text{
+  stroke: #7d96a0 !important;
+}
+
+
+.dot{
+    fill:#a54d5b;
+    stroke:#ce974b;
+}
+
+#yr {
+    color: #b57f51 !important;
+}
+
+.mouseText{
+    fill: #a54d5b !important;
+}
+
+.mouseTextLeave{
+    fill: #523643 !important;
+    stroke:#a54d5b;
+}
+
+
+body { font:16px Montserrat;}
+
+.graphInfo{
+   width: 100%;
+   border: 2.5px solid #7d96a0; 
+}
+
+#imgg {
+    margin: 5%;
+    max-height: 100%;
+    max-width: 100%;       
+}
+
+#des {
+    color: #71353e !important;
+    max-height: 100%;
+    max-width: 100%;  
+    font-size: 12px !important;
+}
+
+
+.col-md-12{
+/*    border: 1px solid black` */
+    height: 700px;
+    width: 100%;
+}
