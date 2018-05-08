@@ -1,0 +1,65 @@
+/* SLIDER */
+
+.Luciaaxis {
+  font: 14px "Lato";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.Luciaaxis .domain {
+  fill: none;
+ /* stroke: #000;
+  stroke-opacity: .3;
+  stroke-width: 10px;
+  stroke-linecap: round;*/
+}
+
+.Luciaaxis .halo {
+  fill: none;
+  stroke: #7d96a0;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.slider .handle {
+  fill: #ce974b;
+  /*stroke: #000;*/
+  /*stroke-opacity: .5;*/
+  /*stroke-width: 1.25px;*/
+  pointer-events: none;
+}
+
+/* LEGEND */
+
+#legend-wrapper {
+  text-align: left;
+  color: #7d96a0;
+  font-family: "Lato";
+  margin-bottom: 30px;
+}
+
+#legend-wrapper .first-line {
+  margin-bottom: 10px;
+}
+
+/* PIE CHART */
+
+.piechart {
+  /*margin: 0 10px;*/
+}
+
+.piechart text {
+  font: 16px "Lato";
+  text-anchor: middle;
+}
+
+/* DOTS */
+
+#dot-wrapper {
+  margin-top: 40px;
+}
+
+#dot-wrapper img {
+  width: 16px;
+}

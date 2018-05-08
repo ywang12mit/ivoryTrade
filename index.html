@@ -1,52 +1,63 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style1.css">
+<header>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="Lucia/style.css">
+</header>
 <body>
-    
-<h1 class="title">Ivory Trade: from 1800s to now</h1>
-<h3 class="personnel">By <span>Lucia Liu</span>, <span>Hannah Lienhard</span>, and <span>Chloe Wang</span>.</h3>
+    <div id="container">
+        <h1 class="title">Ivory Trade: from 1800s to now</h1>
+        <h3 class="personnel">By Lucia Liu, Hannah Lienhard, and Chloe Wang.</h3>
+        <br>
+        <p>Throughout history, the human desire for ivory—used in products from jewelry to piano keys to priceless religious art objects—has far outmatched efforts to stop the killing of African elephants for their tusks. Although different government and organizations have implemented many policies throughout the years, the elephant's population is still in sharp decline, because of the conflicts of interests between countries. We want to use the following illustrations to visualize the alarming current situation and call for actions to save this magnificient species from potential extinction.</p>    
+        <br>
+        <p>Let us first look at the history of ivory trade. In the chart below, major ivory trade events are plotted against the elephant's population. Note that this chart starts from 1900 but ivory trade started in the mid-1800s. Before the ivory trade, there were 26 million elephants roaming the African continent. But after 5 decades of the trade, the population dropped to 15 million, shrank 42%.</p>
+        <br>
+        <p> In the chart below, each step represents a data point of the recorded elephant population. Each dot represents a major event that happened in that year. Click on each dot to find out the history of ivory trade and learn about what led to today's situation.</p>   
+        <div class="container">
+            <div class="row">
+                <div id="chart" class="col-md-12 "></div>
 
-<p>Throughout history, the human desire for ivory—used in products from jewelry to piano keys to priceless religious art objects—has far outmatched efforts to stop the killing of African elephants for their tusks. Although different government and organizations have implemented many policies throughout the years, the elephant's population is still in sharp decline, because of the conflicts of interests between countries. We want to use the following illustrations to visualize the alarming current situation and call for actions to save this magnificient species from potential extinction. </p>    
-    </br>
-<p>Let us first look at the history of ivory trade. In the chart below, major ivory trade events are plotted against the elephant's population. Note that this chart starts from 1900 but ivory trade started in the mid-1800s. Before the ivory trade, there were 26 million elephants roaming the African continent. But after 5 decades of the trade, the population dropped to 15 million, shrank 42%.</p>
+            <div class="row graphInfo">    
+                <div class="col-md-4"><img id="imgg"></div>
+                <div class="col-md-8"><h2 id="yr"></h2><p id="des"></p></div>
+            </div>
+        </div>
 
-<p> In the chart below, each step represents a data point of the recorded elephant population. Each dot represents a major event that happened in that year. Click on each dot to find out the history of ivory trade and learn about what led to today's situation. </p>   
-<div class="container">
-    <div class="row">
-        <div id="chart" class="col-md-12 "></div>
-
-    <div class="row graphInfo">    
-        <div class="col-md-4"><img id="imgg"></div>
-        <div class="col-md-8"><h2 id="yr"></h2><p id="des"></p></div>
+        <!-- LUCIA START -->
+        <div id="slider-wrapper"></div>
+            <div id="legend-wrapper">
+            <div class="first-line">
+              <span>
+                <svg width="20" height="20" style="margin-right: 10px">
+                  <rect width="20" height="20" style="fill:#71353e;stroke-width:0;stroke:#7d96a0"/>
+                </svg>
+                Illegally killed elephants
+              </span>
+            </div>
+            <div class="second-line">
+              <span>
+                <svg width="20" height="20" style="margin-right: 10px">
+                  <rect width="20" height="20" style="fill:#33222a;stroke-width:0;stroke:#7d96a0"/>
+                </svg>
+                Legal elephant deaths
+              </span>
+            </div>
+        </div>
+        <div id="piechart-wrapper"></div>
+        <!-- LUCIA END -->
+        
     </div>
 
-</div>
-
-<!--
-<div class="container">
-
-    <div class="row" width="1000" height="800">
-    <div id="chart" class="col-md-12 " width="1000" height="800"></div>   
-    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="script1.js"></script>
+    <script src="Lucia/piechart.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script> <!-- DON'T remove this -->
+    <script src="Lucia/slider.js"></script>
     
-    <div class="row graphInfo">
-  
-      <div class="col-md-4"><img id="imgg" width="400"></div>
-      <div class="col-md-8"><p id="des"></p></div>
-  
-</div>
--->
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="script1.js"></script>
-
-
 </body>
