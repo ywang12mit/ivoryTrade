@@ -19,19 +19,14 @@ var label = d3.arc()  // label locations
     .outerRadius(radius - 18)   // should be the same for inner and outer
     .innerRadius(radius - 18);
 
-
-var dotWrapper = document.getElementById("dot-wrapper");
-
 var legend = d3.select("#legend-wrapper");
 
+updateData();
 
-
-updateData(yr);
-
-function updateData(year) {
+function updateData() {
 
   d3.selectAll(".piechart").remove();
-  //d3.selectAll(".dot").remove();
+  d3.selectAll(".elephant").remove();
 
   d3.csv("Lucia/data/" + "PIKE_africa/" + yr + ".csv", function(d) {
     // console.log(d);
@@ -85,7 +80,7 @@ function updateData(year) {
           .attr("transform", function(d) { return "translate(" + label.centroid(d) + ")"; })
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
-          .attr("opacity", ".5")
+          .attr("opacity", ".75")
           .text(function(d) { return (round(d.data.total*100, 0)) + "%"; })
 
       } else if (i == 1) {
@@ -105,7 +100,7 @@ function updateData(year) {
           .attr("transform", function(d) { return "translate(" + label.centroid(d) + ")"; })
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
-          .attr("opacity", ".5")
+          .attr("opacity", ".75")
           .text(function(d) { return (round(d.data.west*100, 0)) + "%"; });
 
       } else if (i == 2) {
@@ -125,7 +120,7 @@ function updateData(year) {
           .attr("transform", function(d) { return "translate(" + label.centroid(d) + ")"; })
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
-          .attr("opacity", ".5")
+          .attr("opacity", ".75")
           .text(function(d) { return (round(d.data.central*100, 0)) + "%"; });
 
       } else if (i == 3) {
@@ -145,7 +140,7 @@ function updateData(year) {
           .attr("transform", function(d) { return "translate(" + label.centroid(d) + ")"; })
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
-          .attr("opacity", ".5")
+          .attr("opacity", ".75")
           .text(function(d) { return (round(d.data.east*100, 0)) + "%"; });
 
       } else if (i == 4) {
@@ -165,7 +160,7 @@ function updateData(year) {
           .attr("transform", function(d) { return "translate(" + label.centroid(d) + ")"; })
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
-          .attr("opacity", ".5")
+          .attr("opacity", ".75")
           .text(function(d) { return (round(d.data.south*100, 0)) + "%"; });
       }
     }
@@ -181,31 +176,14 @@ function updateData(year) {
     console.log("illegal: " + numIllegal);
     console.log("total: " + numTotal);
 
-    // DOTS
-    // for (i = 0; i < numIllegal; i++) {
-    //   dotWrapper.innerHTML += "<img class='dot' src='images/elephant-illegal.svg'/>";
-    // }
-    // for (i = 0; i < numLegal; i++) {
-    //   dotWrapper.innerHTML += "<img class='dot' src='images/elephant-legal.svg'/>";
-    // }
-
-    // <svg height="100" width="100">
-    //   <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
-    // </svg>
-    // 2 ELEPHANTS
-    // var maxWidth = 400;
-    // var illegalSize = sizeElephant(maxWidth, numTotal, numIllegal);
-    // var legalSize = sizeElephant(maxWidth, numTotal, numLegal);
-    // dotWrapper.innerHTML += "<img class='dot' width='" + illegalSize + "'' src='images/elephant-illegal.svg'/>";
-    // dotWrapper.innerHTML += "<img class='dot' width='" + legalSize + "'' src='images/elephant-legal.svg'/>";
+    // ELEPHANTS
+    document.getElementById("year").innerHTML = yr;
+    document.getElementById("illegal").innerHTML = numIllegal;
+    document.getElementById("total").innerHTML = numTotal;
+    document.getElementById("elephant-wrapper").innerHTML = "<img class='elephant' src='Lucia/images/" + yr + ".svg'/>";
+    
   });
 }
-
-// function svgcircle(h, w, cx, cy, r, stroke, strokewidth, fill) {
-//   var circlehtml = "<circle cx='" + cx + "' cy='" + cy + "' r='" + r + "' stroke=" + stroke + " stroke-width='" + strokewidth + "' fill=" + fill + ">";
-//   var svghtml = "<svg class='dot' height='" + h + "' width='" + w +"'>" + circlehtml + "</svg>";
-//   return svghtml;
-// }
 
 // function to round number to certain precision
 function round(number, precision) {

@@ -86,5 +86,5 @@ function brushend() {
 
     yr = round(value,0);
 
-    updateData(yr);
+    updateData();
  }

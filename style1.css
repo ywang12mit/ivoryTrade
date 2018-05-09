@@ -9,13 +9,10 @@
   stroke: #7d96a0 !important;
 }
 
-
 .dot{
     fill:#a54d5b;
     stroke:#ce974b;
 }
-
-
 
 .mouseText{
     fill: #a54d5b !important;
@@ -25,7 +22,6 @@
     fill: #523643 !important;
     stroke:#a54d5b;
 }
-
 
 .graphInfo{
    width: 100%;
@@ -52,7 +48,6 @@
     max-width: 100%;  
     font-size: 12px !important;
 }
-
 
 .col-md-12{
 /*    border: 1px solid black` */

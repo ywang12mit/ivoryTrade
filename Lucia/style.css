@@ -54,12 +54,35 @@
   text-anchor: middle;
 }
 
-/* DOTS */
+/* ELEPHANTS */
 
-#dot-wrapper {
-  margin-top: 40px;
+#stat {
+  margin-top: 20px;
 }
 
-#dot-wrapper img {
-  width: 16px;
+#stat #year {
+  color: #ce974b;
+  font-size: 1.125em;
+  margin-left: 5px;
+  margin-right: 1px;
+}
+
+#stat #illegal {
+  font-size: 2em;
+  font-weight: bold;
+  color: #71353e;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#stat #total {
+  font-size: 2em;
+  font-weight: bold;
+  color: #71353e;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#elephant-wrapper {
+  margin: 20px 0;
 }
