@@ -1,10 +1,13 @@
+//
+
+window.onerror = function() {
+    location.reload();
+}
+
 // set the dimensions and margins of the graph
 var margin = {top: 50, right: 50, bottom: 50, left: 50},
     width = d3.select("#chart").node().clientWidth - margin.left - margin.right,
     height = d3.select("#chart").node().clientHeight - margin.left - margin.right;
-
-
-
 
 var curveArray = [
     {"d3Curve":d3.curveStepAfter,"curveTitle":"Population"}
@@ -77,7 +80,7 @@ var filterDate = data.filter(function(d){
     
   })    
 
-    console.log(filterDate);
+    //console.log(filterDate);
     formatYear = d3.timeFormat("%Y");
 
   svg.selectAll(".dot")
@@ -86,7 +89,8 @@ var filterDate = data.filter(function(d){
     .attr("class","dot")
       .attr("r", 4)
       .attr("cx", function(d) { return x(d.date); })
-      .attr("cy", function(d) { console.log(d);return y(d.close); })
+      .attr("cy", function(d) { //console.log(d);
+        return y(d.close); })
     
     .on("mouseover",function(d){
       d3.select(this).attr("r", 7);
@@ -100,9 +104,6 @@ var filterDate = data.filter(function(d){
    
       .on("click",function(d){console.log(d);d3.select("#yr").html(formatYear(d.date));d3.select("#des").html(d.event);
       d3.select("#imgg").attr('src', d.img);
-                              
-
-
 
     });
        
