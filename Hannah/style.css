@@ -1,14 +1,15 @@
-body{
+/*body {
     font-family: "Century Gothic";
     padding: 50px;
     background-color:#121720;
-}
+}*/
 
 .overlay {
     position: absolute;
     display: inline;
     width: 1000px;
     height: 1000px;
+    margin-top: -175px; /* fix excessive margin */
 }
 
 .tusks {

@@ -1,7 +1,7 @@
 /* SLIDER */
 
 .Luciaaxis {
-  font: 14px "Lato";
+  font: 14px "Century Gothic";
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -35,7 +35,7 @@
 #legend-wrapper {
   text-align: left;
   color: #7d96a0;
-  font-family: "Lato";
+  font-family: "Century Gothic";
   margin-bottom: 30px;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .piechart text {
-  font: 16px "Lato";
+  font: 16px "Century Gothic";
   text-anchor: middle;
 }
 
