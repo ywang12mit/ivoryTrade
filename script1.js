@@ -106,7 +106,8 @@ var filterDate = data.filter(function(d){
       d3.select("#imgg").attr('src', d.img);
 
     });
-       
+    
+   
   // Add the X Axis
   svg.append("g")
       .attr("class", "axis")
