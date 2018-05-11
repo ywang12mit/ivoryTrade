@@ -51,6 +51,10 @@
 
 .col-md-12{
 /*    border: 1px solid black` */
-    height: 700px;
+/*    height: 700px;*/
     width: 100%;
+}
+
+#ym{
+    width=100%;
 }

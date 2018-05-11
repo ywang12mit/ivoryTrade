@@ -6,6 +6,22 @@ body {
     text-align: justify;
 }
 
+a{
+    color: #71353e;
+}
+
+h1, h2, h3 {
+    
+    color: #b57f51;
+}
+
+h5{
+   color: #71353e;
+}
+
+h3{
+    margin-top: 100px !important;
+}
 #container {
   width: 800px;
   margin: auto;
@@ -20,3 +36,4 @@ body {
 	font-size: 2em;
 	font-weight: bold;
 }
+
