@@ -10,6 +10,9 @@ a{
     color: #71353e;
 }
 
+a:hover{
+    color: #b57f51;
+}
 h1, h2, h3 {
     
     color: #b57f51;
