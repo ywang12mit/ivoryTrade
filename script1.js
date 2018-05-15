@@ -1,11 +1,14 @@
 //
 
+<<<<<<< HEAD
 //window.onerror = function() {
 //    location.reload();
 //}
 
 d3.select(".graphInfo").classed("boxonload",true);
 
+=======
+>>>>>>> 8eff5f594bff8fb156b99582700e1656e7bcebb3
 
 // set the dimensions and margins of the graph
 var margin = {top: 50, right: 50, bottom: 100, left: 50},
