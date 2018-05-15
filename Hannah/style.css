@@ -7,26 +7,26 @@
 .overlay {
     position: absolute;
     display: inline;
-    width: 1000px;
-    height: 1000px;
-    margin-top: -175px; /* fix excessive margin */
+    width: 2000px;
+    height: 2000px;
 }
 
 .tusks {
     position: absolute;
-    width: 836px;
+    width: 1297.3px;
     height: 1100px;
     z-index: 0;
 }
 
 
 .overlay ul {
-    font-size: 20pt;
+    font-size: 23pt;
     position: absolute;
-    top: 380px;
-    right: 360px;
+    top: 255px;
+    left: 160px;
     z-index: 1;
     color: #7d96a0;
+    padding: 10px;
 }
 .rect1 {
     position: absolute;
@@ -43,10 +43,12 @@ button {
     cursor: pointer;
     display: inline-block;
     color: #7d96a0;
+    z-index: 1;
 }
 
 button:hover {
-    background: ##71353e;
+/*    background: #938b5e;*/
+    color: #614150;
 }
 
 /*
@@ -56,6 +58,15 @@ button:visited {
 */
 
 .rect2 {
+    position: absolute;
+    fill: #614150;
+/*    fill: rgb(142, 86, 125);*/
+    top: 800px;
+    right: 800px;
+    z-index: -1;
+}
+
+.rect3 {
     position: absolute;
     fill: #614150;
 /*    fill: rgb(142, 86, 125);*/
