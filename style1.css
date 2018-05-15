@@ -46,15 +46,19 @@
     color: #b57f51 !important;
     max-height: 100%;
     max-width: 100%;  
-    font-size: 12px !important;
+    font-size: 14px !important;
 }
 
 .col-md-12{
-border: 1px solid black;
-height: 700px;
+/*border: 1px solid black;*/
+
     width: 100%;
 }
 
+#chart{
+    height: 500px;
+}
 #ym{
     width=100%;
+    
 }
