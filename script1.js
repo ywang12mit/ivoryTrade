@@ -1,13 +1,18 @@
 //
 
-window.onerror = function() {
-    location.reload();
-}
+//window.onerror = function() {
+//    location.reload();
+//}
+
+d3.select(".graphInfo").classed("boxonload",true);
+
 
 // set the dimensions and margins of the graph
-var margin = {top: 50, right: 50, bottom: 50, left: 50},
+var margin = {top: 50, right: 50, bottom: 100, left: 50},
     width = d3.select("#chart").node().clientWidth - margin.left - margin.right,
-    height = d3.select("#chart").node().clientHeight - margin.left - margin.right;
+    height = d3.select("#chart").node().clientHeight - margin.top - margin.bottom;
+
+
 
 var curveArray = [
     {"d3Curve":d3.curveStepAfter,"curveTitle":"Population"}
@@ -19,6 +24,7 @@ var parseTime = d3.timeParse("%Y");
 // set the ranges
 var x = d3.scaleTime().domain([1800,2030]).range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
+//var y = d3.scaleLog().base(Math.E).domain([0, 15]).range([height, 0]);
 
 // define the line
 var valueline = d3.line()
@@ -47,10 +53,11 @@ d3.csv("chart1/data-3.csv", function(error, data) {
   data.forEach(function(d) {
       d.date = parseTime(d.date);
       d.close = +d.close;
+      d.barchart =+d.barchart;
   });
 
   // set the colour scale
-  var color = d3.scaleOrdinal(d3.schemeCategory10);
+  //var color = d3.scaleOrdinal(d3.schemeCategory10);
 
   curveArray.forEach(function(daCurve,i) { 
 
@@ -62,14 +69,21 @@ d3.csv("chart1/data-3.csv", function(error, data) {
     svg.append("path")
       .datum(data)
       .attr("class", "line")
-      .style("stroke", function() { // Add the colours dynamically
-              return daCurve.color = color(daCurve.curveTitle); })
       .attr("id", 'tag'+i) // assign ID
+       .style("stroke-dasharray", ("3, 5"))
       .attr("d", d3.line()
                    .curve(daCurve.d3Curve)
                    .x(function(d) { return x(d.date); })
                    .y(function(d) { return y(d.close); })
                );
+    svg.selectAll(".bar")
+    .data(data.filter(function(d){return d.barchart!=0}))
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.date); })
+      .attr("y", function(d) { return y(d.barchart); })
+      .attr("width",width/(116/2))
+      .attr("height", function(d) {return height-y(d.close)});
   });
 
   // Add the scatterplot
@@ -87,7 +101,7 @@ var filterDate = data.filter(function(d){
       .data(filterDate)
     .enter().append("circle")
     .attr("class","dot")
-      .attr("r", 4)
+      .attr("r", 5)
       .attr("cx", function(d) { return x(d.date); })
       .attr("cy", function(d) { //console.log(d);
         return y(d.close); })
@@ -96,14 +110,16 @@ var filterDate = data.filter(function(d){
       d3.select(this).attr("r", 7);
       svg.append("text").attr("class","mouseText").text(formatYear(d.date)).attr("x", x(d.date))
       .attr("y", y(d.close)-20);
+      console.log(formatYear(d.date));
   })
     .on("mouseleave",function(d){
       d3.select(this).attr("r", 4).attr("class","mouseTextLeave"); 
-      d3.select(".mouseText").remove();
+      d3.selectAll(".mouseText").remove();
         })
    
       .on("click",function(d){console.log(d);d3.select("#yr").html(formatYear(d.date));d3.select("#des").html(d.event);
       d3.select("#imgg").attr('src', d.img);
+    d3.select(".graphInfo").classed("boxonload",false);
 
     });
     
@@ -113,9 +129,13 @@ var filterDate = data.filter(function(d){
       .attr("class", "axis")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
+//    svg.append("text").attr("class","mouseText").text("x axis").attr("x", width/2)
+//      .attr("y", height+15);
 
   // Add the Y Axis
   svg.append("g")
       .attr("class", "axis")
       .call(d3.axisLeft(y));
+    svg.append("text").attr("class","mouseText").text("Elephant Population in Millions").attr("x", -310)
+      .attr("y", -28).attr("transform", "rotate(-90)");
 });
