@@ -1,8 +1,5 @@
 //
 
-window.onerror = function() {
-    location.reload();
-}
 
 // set the dimensions and margins of the graph
 var margin = {top: 50, right: 50, bottom: 50, left: 50},

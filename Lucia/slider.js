@@ -2,89 +2,65 @@ var margin = {top: 20, right: 50, bottom: 20, left: 50},
     width = 800 - margin.left - margin.right,
     height = 120 - margin.bottom - margin.top;
 
-var x = d3.scale.linear()
-    .domain([2003, 2016]) // SLIDER RANGE
-    .range([0, width])
-    .clamp(true);
-
-var brush = d3.svg.brush()
-    .x(x)
-    .extent([0, 0])
-    .on("brush", brushed)
-    .on("brushend", brushend);
-
 var svg = d3.select("#slider-wrapper").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-svg.append("g")
-    .attr("class", "x Luciaaxis")
-    .attr("transform", "translate(0," + height / 2 + ")")
-    .call(d3.svg.axis()
-      .scale(x)
-      .orient("bottom")
-      .tickFormat(function(d) { return d; })  // SLIDER FORMAT
-      .tickSize(0)
-      .tickPadding(18))
-      .style("fill","#7d96a0")
-  .select(".domain")
-  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
-    .attr("class", "halo");
+var x = d3.scaleLinear()
+    .domain([2003, 2016])
+    .range([0, width])
+    .clamp(true);
 
 var slider = svg.append("g")
     .attr("class", "slider")
-    .call(brush);
+    .attr("transform", "translate(" + margin.left + "," + height / 2 + ")");
 
-slider.selectAll(".extent,.resize")
-    .remove();
+slider.append("line")
+    .attr("class", "track")
+    .attr("x1", x.range()[0])
+    .attr("x2", x.range()[1])
+  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+    .attr("class", "track-inset")
+  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+    .attr("class", "track-overlay")
+    .call(d3.drag()
+        .on("start.interrupt", function() { slider.interrupt(); })
+        .on("start drag", function() { hue(x.invert(d3.event.x)); })
+        .on("end", snap));
 
-slider.select(".background")
-    .attr("height", height);
+slider.insert("g", ".track-overlay")
+    .attr("class", "ticks")
+    .attr("transform", "translate(0," + 18 + ")")
+  .selectAll("text")
+  .data(x.ticks(10))
+  .enter().append("text")
+    .attr("x", x)
+    .attr("text-anchor", "middle")
+    .attr("fill", "white")
+    .text(function(d) { return d; });
 
-var handle = slider.append("circle")
+var handle = slider.insert("circle", ".track-overlay")
     .attr("class", "handle")
-    .attr("transform", "translate(0," + height / 2 + ")")
-    .attr("r", 8);  // slider circle radius
+    .attr("r", 9);
 
-slider
-    .call(brush.event)
-  .transition() // gratuitous intro!
-    .duration(750)
-    .call(brush.extent([2003, 2003])) // MUST BE FIRST VALUE I THINK
-    .call(brush.event);
+slider.transition() // Gratuitous intro!
+    .duration(750);
+    // // .tween("hue", function() {
+    // //   var i = d3.interpolate(0, 70);
+    // //   return function(t) { hue(i(t)); };
+    // });
 
-function brushed() {
-  var value = brush.extent()[0];
-
-  if (d3.event.sourceEvent) { // not a programmatic event
-    value = x.invert(d3.mouse(this)[0]);
-    brush.extent([value, value]);
-  }
-
-  handle.attr("cx", x(value));
+function hue(h) {
+  handle.attr("cx", x(h));
 }
 
-function brushend() {
-   if (!d3.event.sourceEvent) {
-     return; // only transition after input
-   }
-
-   var value = brush.extent()[0];                    
-   brush.extent([value, value]);    // value = value on slider on mouse up
-   
-   d3.select(this)
-     .transition()
-     .duration(0)
-     .call(brush.event);                           
-  
-   d3.select(this)
-     .transition()
-     .call(brush.extent(brush.extent().map(function(d) { return d3.round(d, 0); }))) // SNAPS TO DIGIT at number 0
-     .call(brush.event);
-
-    yr = round(value,0);
-
-    updateData();
- }
+function snap() {
+  var value = x.invert(d3.event.x);
+  console.log(value);
+  var rounded = round(value, 0);
+  handle.attr("cx", x(rounded));
+  yr = rounded;
+  updateData();
+}
