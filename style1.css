@@ -17,8 +17,12 @@
 
 
 .axis text{
-    fill:#7d96a0;
+    fill:#7d96a0 !important;
     
+}
+
+.yaxisname{
+    fill:#7d96a0;
 }
 .dot{
     cursor:pointer;
