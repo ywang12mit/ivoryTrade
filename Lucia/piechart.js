@@ -81,7 +81,9 @@ function updateData() {
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
           .attr("opacity", ".75")
-          .text(function(d) { return (round(d.data.total*100, 0)) + "%"; })
+          .text(function(d) { if (d.index == 0) {
+            return (round(d.data.total*100, 0)) + "%"}
+          });
 
       } else if (i == 1) {
         pie.value(function(d) { return d.west; });
@@ -101,7 +103,9 @@ function updateData() {
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
           .attr("opacity", ".75")
-          .text(function(d) { return (round(d.data.west*100, 0)) + "%"; });
+          .text(function(d) { if (d.index == 0) {
+            return (round(d.data.west*100, 0)) + "%"}
+          });
 
       } else if (i == 2) {
         pie.value(function(d) { return d.central; });
@@ -121,7 +125,9 @@ function updateData() {
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
           .attr("opacity", ".75")
-          .text(function(d) { return (round(d.data.central*100, 0)) + "%"; });
+          .text(function(d) { if (d.index == 0) {
+            return (round(d.data.central*100, 0)) + "%"}
+          });
 
       } else if (i == 3) {
         pie.value(function(d) { return d.east; });
@@ -141,7 +147,9 @@ function updateData() {
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
           .attr("opacity", ".75")
-          .text(function(d) { return (round(d.data.east*100, 0)) + "%"; });
+          .text(function(d) { if (d.index == 0) {
+            return (round(d.data.east*100, 0)) + "%"}
+          });
 
       } else if (i == 4) {
         pie.value(function(d) { return d.south; });
@@ -161,7 +169,9 @@ function updateData() {
           .attr("dy", "0.35em")
           .attr("fill", "#ce974b")
           .attr("opacity", ".75")
-          .text(function(d) { return (round(d.data.south*100, 0)) + "%"; });
+          .text(function(d) { if (d.index == 0) {
+            return (round(d.data.south*100, 0)) + "%"}
+          });
       }
     }
 
@@ -171,10 +181,10 @@ function updateData() {
     var numTotal = data[0]["totalcarc"];
     var numIllegal = data[1]["totalcarc"];
     var numLegal = numTotal - numIllegal;
-    console.log("height: " + Math.ceil(numTotal/50)*16);
-    console.log("height Illegal: " + Math.ceil(numIllegal/50)*16);
-    console.log("illegal: " + numIllegal);
-    console.log("total: " + numTotal);
+    // console.log("height: " + Math.ceil(numTotal/50)*16);
+    // console.log("height Illegal: " + Math.ceil(numIllegal/50)*16);
+    // console.log("illegal: " + numIllegal);
+    // console.log("total: " + numTotal);
 
     // ELEPHANTS
     document.getElementById("year").innerHTML = yr;

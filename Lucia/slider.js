@@ -1,4 +1,4 @@
-var margin = {top: 20, right: 50, bottom: 20, left: 50},
+var margin = {top: 0, right: 50, bottom: 20, left: 50},
     width = 800 - margin.left - margin.right,
     height = 120 - margin.bottom - margin.top;
 
@@ -15,7 +15,7 @@ var x = d3.scaleLinear()
 
 var slider = svg.append("g")
     .attr("class", "slider")
-    .attr("transform", "translate(" + margin.left + "," + height / 2 + ")");
+    .attr("transform", "translate(0," + height / 2 + ")");
 
 slider.append("line")
     .attr("class", "track")
@@ -32,18 +32,18 @@ slider.append("line")
 
 slider.insert("g", ".track-overlay")
     .attr("class", "ticks")
-    .attr("transform", "translate(0," + 18 + ")")
+    .attr("transform", "translate(0," + 28 + ")")
   .selectAll("text")
   .data(x.ticks(10))
   .enter().append("text")
     .attr("x", x)
     .attr("text-anchor", "middle")
-    .attr("fill", "white")
+    .attr("fill", "#7d96a0")
     .text(function(d) { return d; });
 
 var handle = slider.insert("circle", ".track-overlay")
     .attr("class", "handle")
-    .attr("r", 9);
+    .attr("r", 8);
 
 slider.transition() // Gratuitous intro!
     .duration(750);
