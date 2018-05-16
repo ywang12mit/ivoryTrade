@@ -4,8 +4,8 @@ function tusks(){
 document.getElementById("tusks").src = tusks();
 
 var tusk = d3.select("#tusk")
-    .attr("width", 2000)
-    .attr("height", 2000);
+    .attr("width", 1000)
+    .attr("height", 1000);
 
 var rectangle = tusk.select("#rect1")
     .attr("x", 100)
