@@ -5,14 +5,14 @@
 }*/
 
 .overlay {
-    position: absolute;
+    position: relative;
 /*     display: inline; */
     width: 1300px;
     height: 1100px;
 }
 
 .tusks {
-    position: absolute;
+    position: relative;
     width: 1297.3px;
     height: 1100px;
     z-index: 0;
@@ -21,7 +21,7 @@
 
 .overlay ul {
     font-size: 23pt;
-    position: absolute;
+    position: relative;
     top: 255px;
     left: 160px;
     z-index: 1;
@@ -29,7 +29,7 @@
     padding: 10px;
 }
 .rect1 {
-    position: absolute;
+    position: relative;
     fill: #614150;
 /*    fill: rgb(142, 86, 125);*/
     top: 200px;
@@ -58,7 +58,7 @@ button:visited {
 */
 
 .rect2 {
-    position: absolute;
+    position: relative;
     fill: #614150;
 /*    fill: rgb(142, 86, 125);*/
     top: 800px;
@@ -67,7 +67,7 @@ button:visited {
 }
 
 .rect3 {
-    position: absolute;
+    position: relative;
     fill: #614150;
 /*    fill: rgb(142, 86, 125);*/
     top: 800px;
