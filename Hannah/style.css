@@ -5,14 +5,14 @@
 }*/
 
 .overlay {
-    position: relative;
+    position: absolute;
     display: inline;
     width: 1300px;
     height: 1100px;
 }
 
 .tusks {
-    position: relative;
+    position: absolute;
     width: 1297.3px;
     height: 1100px;
     z-index: 0;
@@ -21,7 +21,7 @@
 
 .ul {
     font-size: 23pt;
-    position: relative;
+    position: absolute;
     top: 255px;
     left: 160px;
     z-index: 1;
