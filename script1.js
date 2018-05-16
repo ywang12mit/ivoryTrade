@@ -66,6 +66,9 @@ d3.csv("chart1/data-3.csv", function(error, data) {
     Y.domain(d3.extent(data, function(d) { return d.close; }));
 
     
+  
+      
+      
    Csvg.append("path")
   .datum(data)
   .attr("class", "line")
@@ -76,18 +79,17 @@ d3.csv("chart1/data-3.csv", function(error, data) {
                .x(function(d) { return X(d.date); })
                .y(function(d) { return Y(d.close); })
            );
-
-   
-    Csvg.selectAll(".bar")
+   Csvg.selectAll(".bar")
     .data(data.filter(function(d){return d.barchart!=0}))
     .enter().append("rect")
-      .attr("class", "bar")
+      .attr("class", "bar")     
       .attr("x", function(d) { return X(d.date); })
       .attr("y", function(d) { return Y(d.barchart); })
-      .attr("widthC",widthC/(116/2))
-      .attr("heightC", function(d) {return heightC-Y(d.close)});
-  });
-    
+      .attr("width",widthC/(116/3))
+      .attr("height", function(d) {return heightC-Y(d.close)});
+  });    
+   
+ 
     
   // Add the scatterplot
     
