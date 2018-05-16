@@ -33,13 +33,13 @@ var chess = d3.select("#chess")
 var button = d3.select(".button")
 
 
-piano.on("click", function(){           // don't change the widths!
+piano.on("click", function(){
     piano.style("color", "#614150")
-    rectangle.attr("height", 168)
-    // rectangle1.attr("width", 250)
-    rectangle1.attr("height",180)
+    rectangle.attr("height", 114)
+    rectangle1.attr("width", 220)
+    rectangle1.attr("height", 90)
     // rectangle2.attr("width", 360)
-    rectangle2.attr("height",132)
+    rectangle2.attr("height", 120)
     
     statues.style("color", "#7d96a0")
     wind.style("color", "#7d96a0")
@@ -52,11 +52,11 @@ piano.on("click", function(){           // don't change the widths!
 
 statues.on("click", function(){
     statues.style("color", "#614150")
-    rectangle.attr("height", 323) 
-    // rectangle1.attr("width", 250)
-    rectangle1.attr("height",320)
+    rectangle.attr("height", 208) 
+    rectangle1.attr("width", 220)
+    rectangle1.attr("height",160)
     // rectangle2.attr("width", 360)
-    rectangle2.attr("height",252)
+    rectangle2.attr("height", 210)
     
     piano.style("color", "#7d96a0")
     wind.style("color", "#7d96a0")
@@ -70,12 +70,12 @@ statues.on("click", function(){
 
 wind.on("click", function(){
     wind.style("color", "#614150")
-    rectangle.attr("height", 95)
-    // rectangle1.attr("width", 110)
-    rectangle1.attr("height",180)
+    rectangle.attr("height", 67)
+    rectangle1.attr("width", 105)
+    rectangle1.attr("height", 90)
     
     // rectangle2.attr("width", 180)
-    rectangle2.attr("height",132)
+    rectangle2.attr("height", 120)
     
     piano.style("color", "#7d96a0")
     statues.style("color", "#7d96a0")
@@ -83,16 +83,32 @@ wind.on("click", function(){
 //    furniture.style("color", "black")
     chess.style("color", "#7d96a0")
     
+//    button.style("color", "black");
+})
+
+chess.on("click", function(){
+    chess.style("color", "#614150")
+    rectangle.attr("height", 256) 
+    rectangle1.attr("width", 220)
+    rectangle1.attr("height", 236)
+    // rectangle2.attr("width", 360)
+    rectangle2.attr("height", 300)
+    
+    piano.style("color", "#7d96a0")
+    statues.style("color", "#7d96a0")
+    wind.style("color", "#7d96a0")
+    jewelry.style("color", "#7d96a0")
+//    furniture.style("color", "black")
 //    button.style("color", "black");
 })
 
 jewelry.on("click", function(){
     jewelry.style("color", "#614150")
-    rectangle.attr("height", 95)
-    // rectangle1.attr("width", 110)
-    rectangle1.attr("height",180)
+    rectangle.attr("height", 67)
+    rectangle1.attr("width", 105)
+    rectangle1.attr("height", 90)
     // rectangle2.attr("width", 180)
-    rectangle2.attr("height",132)
+    rectangle2.attr("height", 120)
     
     piano.style("color", "#7d96a0")
     statues.style("color", "#7d96a0")
@@ -103,19 +119,4 @@ jewelry.on("click", function(){
 })
 
 
-chess.on("click", function(){
-    chess.style("color", "#614150")
-    rectangle.attr("height", 400) 
-    // rectangle1.attr("width", 250)
-    rectangle1.attr("height",500)
-    // rectangle2.attr("width", 360)
-    rectangle2.attr("height",372)
-    
-    
-    piano.style("color", "#7d96a0")
-    statues.style("color", "#7d96a0")
-    wind.style("color", "#7d96a0")
-    jewelry.style("color", "#7d96a0")
-//    furniture.style("color", "black")
-//    button.style("color", "black");
-})
+
