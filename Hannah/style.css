@@ -12,7 +12,7 @@
 }
 
 .tusks {
-    position: relative;
+    position: absolute;
     width: 1297.3px;
     height: 1100px;
     z-index: 0;
@@ -21,7 +21,7 @@
 
 .overlay ul {
     font-size: 23pt;
-    position: relative;
+    position: absolute;
     top: 255px;
     left: 160px;
     z-index: 1;
@@ -29,7 +29,7 @@
     padding: 10px;
 }
 .rect1 {
-    position: relative;
+    position: absolute;
     fill: #614150;
 /*    fill: rgb(142, 86, 125);*/
     top: 200px;
@@ -58,7 +58,7 @@ button:visited {
 */
 
 .rect2 {
-    position: relative;
+    position: absolute;
     fill: #614150;
 /*    fill: rgb(142, 86, 125);*/
     top: 800px;
@@ -67,7 +67,7 @@ button:visited {
 }
 
 .rect3 {
-    position: relative;
+    position: absolute;
     fill: #614150;
 /*    fill: rgb(142, 86, 125);*/
     top: 800px;
