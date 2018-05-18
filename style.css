@@ -1,4 +1,12 @@
-
+#ending{
+/*
+    background-color: #333;
+    margin:1% !important;
+    padding:1%;
+*/
+ text-align: center;
+    font-size:12px;
+}
 body {
     background-color: #121720;
     font-size: 1em;
